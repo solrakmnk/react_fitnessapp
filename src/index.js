@@ -5,7 +5,6 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Exercises from  './pages/Exercises'
 import App from './components/App'
 
 import 'bootstrap/dist/css/bootstrap.css'
