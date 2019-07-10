@@ -1,8 +1,10 @@
 import React from 'react'
-import  ExerciseForm from '../components/ExerciseForm'
+import ExerciseForm from '../components/ExerciseForm'
 import Card from '../components/Card'
+import '../components/styles/ExerciseNew.css'
 
 class ExerciseNew extends React.Component {
+
     state = {
         form: {
             title: '',
@@ -12,7 +14,8 @@ class ExerciseNew extends React.Component {
             rightColor: ''
         }
     }
-     handleChange = e => {
+
+    handleChange = e => {
         this.setState({
             form: {
                 ...this.state.form,
@@ -20,23 +23,31 @@ class ExerciseNew extends React.Component {
             }
         })
     }
-    
-    render(){
-        return ( 
-            <div className="row">
-                <div className="col-sm">
-                    <Card {...this.state.form}/>
-                </div>
-                <div className="col-sm">
-                <ExerciseForm 
-                    onChange={this.handleChange} 
-                    form={this.state.form}
-                    />
-                </div>
-            </div>  
-        )
+
+    handleSubmit = e => {
+        e.preventDefault()
+        console.log(this.state)
     }
 
+    render(){
+        return (
+            <div className="ExerciseNew_Lateral_Spaces row">
+                <div className="col-sm ExerciseNew_Card_Space">
+                    <Card 
+                        {...this.state.form}
+                    />
+                </div>
+                <div className="col-sm ExerciseNew_Form_Space">
+                    <ExerciseForm
+                        onChange={this.handleChange}
+                        onSubmit={this.handleSubmit}
+                        form={this.state.form}
+                        
+                    />            
+                </div>
+            </div>
+        )
+    }
 }
 
 export default ExerciseNew
