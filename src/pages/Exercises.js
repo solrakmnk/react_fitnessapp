@@ -4,6 +4,7 @@ import Welcome from '../components/Welcome'
 import AddButton from '../components/AddButton'
 import Loading from '../components/Loading'
 import FatalError from './500'
+import url from '../config'
 
 class Exercises extends React.Component {
         state={
@@ -18,7 +19,7 @@ class Exercises extends React.Component {
 
         fetchExercises = async() =>{
             try{
-            let res = await fetch('http://localhost:8000/api/exercises')
+            let res = await fetch(`${url}/api/exercises`)
             let data = await res.json()
             this.setState({
                 data,

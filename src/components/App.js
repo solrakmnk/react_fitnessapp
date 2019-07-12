@@ -11,7 +11,7 @@ const App=()=>(
             <Route exact path="/exercise/new" component={ExerciseNewContainer}></Route>
             <Route component={NotFound}/>
         </Switch>
-        </BrowserRouter>
+    </BrowserRouter>
 )
 
 export default App
